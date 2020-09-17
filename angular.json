@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "matabFinal"
+    }
+  },
+  "defaultProject": "matabFinal",
+  "cli": {
+    "analytics": "49f714b4-bb20-4c32-b0c5-a12390bc4065"
+  }
 }
