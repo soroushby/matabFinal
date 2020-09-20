@@ -5,6 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  {
+    path: 'patients',
+    loadChildren: () =>
+      import('./patients/patients.module').then((m) => m.PatientsModule),
+  },
 ];
 
 @NgModule({

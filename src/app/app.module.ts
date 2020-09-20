@@ -8,6 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
@@ -16,6 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
