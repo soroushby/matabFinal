@@ -15,6 +15,14 @@
         class="matlist"
         >HOME
       </mat-list-item>
+      <mat-list-item
+        role="listitem"
+        fxLayoutAlign="center center"
+        routerLink="/patients/addPatients"
+        (click)="sidenav.close()"
+        class="matlist"
+        >Add patients
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -37,6 +45,16 @@
               routerLinkActive="active"
               fxLayoutAlign="center center"
               >HOME<mat-icon class="nav-list__item-icon">home</mat-icon></a
+            >
+          </li>
+          <li class="nav-list__item">
+            <a
+              routerLink="/patients/addPatients"
+              routerLinkActive="active"
+              fxLayoutAlign="center center"
+              >Add Patients<mat-icon class="nav-list__item-icon"
+                >video</mat-icon
+              ></a
             >
           </li>
         </ul>

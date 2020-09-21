@@ -10,6 +10,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSelectModule } from '@angular/material/select';
+import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 
 @NgModule({
   declarations: [],
@@ -25,6 +27,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatNativeDateModule,
     MatCardModule,
     MatGridListModule,
+    MatSelectModule,
+    DpDatePickerModule,
   ],
   exports: [
     MatButtonModule,
@@ -37,6 +41,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatNativeDateModule,
     MatCardModule,
     MatGridListModule,
+    MatSelectModule,
+    DpDatePickerModule,
   ],
 })
 export class MaterialModule {}

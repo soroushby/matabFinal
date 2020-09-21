@@ -1,1 +1,73 @@
-<p>add-patients works!</p>
+<div class="main" fxLayoutAlign="center center">
+  <mat-card class="card">
+    <form class="container" [formGroup]="patientsForm">
+      <div fxLayout="column" fxLayoutAlign="center center" ngClass.lt-md="res">
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="name"
+            placeholder="Enter patient's name"
+          />
+          <mat-error *ngIf="patientsForm.get('name').hasError('required')">
+            Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="age"
+            placeholder="Enter patient's age"
+            type="number"
+          />
+          <mat-error *ngIf="patientsForm.get('age').hasError('required')">
+            Age is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            formControlName="number"
+            placeholder="Enter a cell number"
+            type="number"
+          />
+          <mat-error *ngIf="patientsForm.get('number').hasError('required')">
+            Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Parity</mat-label>
+          <mat-select formControlName="parity">
+            <mat-option *ngFor="let parity of parities" [value]="parity.name">
+              {{ parity.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <dp-date-picker
+          class="a1"
+          id="fromDate"
+          dir="rtl"
+          mode="day"
+          placeholder="تاریخ"
+          theme="dp-material"
+          formControlName="date"
+        >
+        </dp-date-picker>
+
+        <button
+          mat-raised-button
+          style="float: right"
+          routerLink="/patients/loadPatients"
+          (click)="onAddPatients()"
+          class="submit-button"
+          [disabled]="patientsForm.invalid"
+        >
+          save
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
