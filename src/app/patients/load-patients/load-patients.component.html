@@ -1,1 +1,21 @@
-<p>load-patients works!</p>
+<ag-grid-angular
+  class="ag-theme-alpine-dark myGrid"
+  [rowData]="patient$ | async"
+  [columnDefs]="columnDefs"
+  (gridReady)="onGridReady($event)"
+  rowSelection="multiple"
+>
+</ag-grid-angular>
+<div class="actions" fxLayout="row">
+  <button mat-raised-button color="primary" (click)="selectAll()">
+    select All
+  </button>
+
+  <button mat-raised-button color="primary" (click)="deSelectAll()">
+    Deselect all
+  </button>
+
+  <button mat-raised-button color="warn">Delete</button>
+</div>
+
+<div *ngIf="patients"></div>

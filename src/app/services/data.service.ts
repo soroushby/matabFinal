@@ -2,6 +2,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Patient } from '../interfaces/patients';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +19,8 @@ export class DataService {
     });
   }
 
-  getPatients() {
-    this.db
+  getPatients(): Observable<Patient[]> {
+    return this.db
       .collection('patients')
       .snapshotChanges()
       .pipe(
