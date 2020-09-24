@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,14 +13,18 @@ import { Patient } from 'src/app/interfaces/patients';
 export class LoadPatientsComponent implements OnInit {
   patient$: Observable<Patient[]>;
 
+  selection = new BehaviorSubject<string>('');
+
   patients;
-  gridApi;
+  gridApi: GridApi;
   gApi;
   columnApi;
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.patient$ = this.dataService.getPatients();
+
+    // console.log(this.selection);
   }
 
   columnDefs = [
@@ -30,6 +34,9 @@ export class LoadPatientsComponent implements OnInit {
       sortable: true,
       filter: true,
       width: 600,
+      checkboxSelection: true,
+      headerCheckboxSelection: true,
+      headerCheckboxSelectionFilteredOnly: true,
     },
     {
       headerName: 'Age',
@@ -58,7 +65,17 @@ export class LoadPatientsComponent implements OnInit {
     this.gridApi.deselectAll();
   }
 
-  // onDeletePatients(id) {
-  //   this.patientsService.deletePatient(id);
-  // }
+  onDeletePatients(id) {
+    this.dataService.deletePatients(id);
+  }
+
+  onSelctionChanged() {
+    selection: new BehaviorSubject<string>('');
+    const selectedId = this.gridApi
+      .getSelectedRows()
+      .map((row) => row.id)
+      .join(', ');
+    this.selection.next(selectedId);
+    console.log(this.selection);
+  }
 }

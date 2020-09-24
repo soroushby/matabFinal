@@ -35,4 +35,8 @@ export class DataService {
         )
       );
   }
+
+  deletePatients(id) {
+    return this.db.collection('patients').doc(id).delete();
+  }
 }

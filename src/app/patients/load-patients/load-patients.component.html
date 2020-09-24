@@ -4,6 +4,7 @@
   [columnDefs]="columnDefs"
   (gridReady)="onGridReady($event)"
   rowSelection="multiple"
+  (selectionChanged)="onSelctionChanged()"
 >
 </ag-grid-angular>
 <div class="actions" fxLayout="row">
@@ -15,7 +16,13 @@
     Deselect all
   </button>
 
-  <button mat-raised-button color="warn">Delete</button>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="onDeletePatients(selection.value)"
+  >
+    Delete
+  </button>
 </div>
 
 <div *ngIf="patients"></div>
