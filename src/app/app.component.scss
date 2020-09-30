@@ -1,3 +1,9 @@
+// #03045e
+// #0077b6
+// #00b4d8
+// #90e0ef
+// #caf0f8
+
 mat-sidenav-container,
 mat-sidenav,
 mat-sidenav-content {
@@ -12,12 +18,12 @@ mat-sidenav-content {
       //list-style: none;
 
       a {
-        color: white;
+        color: #0077b6;
         text-decoration: none;
       }
 
       a:hover {
-        color: rgba(34, 230, 34, 0.89);
+        color: #03045e;
       }
       &-icon {
         margin-left: 0.5rem;
@@ -61,5 +67,5 @@ mat-sidenav-content {
 }
 
 .example-icon {
-  color: white;
+  color: #0077b6;
 }

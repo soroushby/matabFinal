@@ -1,3 +1,9 @@
+// #03045e
+// #0077b6
+// #00b4d8
+// #90e0ef
+// #caf0f8
+
 .main {
   background-repeat: no-repeat;
   background-position: center;
@@ -42,7 +48,7 @@
   }
 
   &-btn-white {
-    background-color: rgba(26, 202, 79, 0.623);
+    background-color: #00b4d8c0;
     color: white;
   }
 
@@ -60,7 +66,7 @@
   }
 
   &-btn-white::after {
-    background-color: rgba(26, 202, 79, 0.623);
+    background-color: #00b4d8c0;
   }
 
   &-btn:hover::after {
@@ -69,18 +75,20 @@
   }
 
   &-btn {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 200;
   }
+
+  // &-btn-position {
+  //   margin-top: 5rem;
+  // }
 }
 
 h1 {
-  color: white;
+  color: #0077b6;
 }
 
 .heading-primary {
-  color: rgba(255, 255, 255, 0.9);
-
   animation-name: moveOnTop;
   animation-duration: 2s;
   backface-visibility: hidden;
@@ -99,20 +107,4 @@ h1 {
     opacity: 1;
     transform: translate(0);
   }
-}
-
-.card {
-  width: 100%;
-  background-color: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  margin-bottom: 2rem;
-}
-
-p {
-  color: white;
-}
-
-mat-card-title {
-  color: white;
 }
